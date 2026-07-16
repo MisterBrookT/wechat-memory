@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+command -v wechat-memory >/dev/null 2>&1 || { echo "wechat-memory 不在 PATH" >&2; exit 127; }
+if [[ $# -lt 1 ]]; then
+  echo '用法: profile "姓名" [--message-limit N]' >&2
+  exit 2
+fi
+person=$1
+shift
+exec wechat-memory profile --person "$person" "$@"

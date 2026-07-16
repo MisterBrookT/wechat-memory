@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>WeChat Memory · 人脉星图</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="title-block">
+      <span class="kicker">WECHAT · LOCAL OBSERVATION</span>
+      <h1>人脉星图</h1>
+    </div>
+    <p id="freshness" class="freshness">读取本地互动记录…</p>
+    <div class="totals" aria-label="当前图谱统计">
+      <span><strong id="people-total">—</strong> 人</span>
+      <span><strong id="group-total">—</strong> 群</span>
+      <span><strong id="message-total">—</strong> 消息</span>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <aside class="control-rail">
+      <section>
+        <span class="section-label">时间</span>
+        <div id="period-control" class="segmented">
+          <button type="button" data-days="30">30 天</button>
+          <button type="button" data-days="90" class="active">90 天</button>
+          <button type="button" data-days="365">一年</button>
+          <button type="button" data-days="0">全部</button>
+        </div>
+      </section>
+
+      <section>
+        <label class="section-label" for="people-limit">人物密度 <output id="people-limit-value">80</output></label>
+        <input id="people-limit" type="range" min="30" max="140" step="10" value="80">
+      </section>
+
+      <section>
+        <label class="toggle-row" for="show-groups">
+          <span><span class="section-label">群聊上下文</span><small>显示活跃群及群内发言者</small></span>
+          <input id="show-groups" type="checkbox" checked>
+        </label>
+      </section>
+
+      <section class="legend">
+        <span class="section-label">图例</span>
+        <p><i class="dot self"></i>你</p>
+        <p><i class="dot person"></i>人物</p>
+        <p><i class="dot group"></i>群聊</p>
+        <p><i class="line private"></i>私聊</p>
+        <p><i class="line group"></i>群内发言</p>
+      </section>
+
+      <p id="graph-note" class="graph-note">线条只表示本地可见互动，不推断亲密度。</p>
+    </aside>
+
+    <section class="graph-stage" aria-label="微信人脉互动图">
+      <canvas id="graph" tabindex="0" aria-describedby="graph-note"></canvas>
+      <div class="graph-caption">
+        <span id="period-label">最近 90 天</span>
+        <span>拖动画布 · 滚轮缩放 · 点击节点</span>
+      </div>
+      <div id="loading" class="loading">正在排列星图</div>
+    </section>
+
+    <aside id="inspector" class="inspector" aria-live="polite">
+      <div class="inspector-empty">
+        <span class="crosshair" aria-hidden="true"></span>
+        <h2>选择一个节点</h2>
+        <p>查看人物、群聊，以及这条连线具体代表什么。</p>
+      </div>
+    </aside>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>

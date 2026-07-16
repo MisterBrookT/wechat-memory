@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+command -v wechat-memory >/dev/null 2>&1 || { echo "wechat-memory 不在 PATH" >&2; exit 127; }
+if [[ $# -ne 1 || ! $1 =~ ^[0-9]+$ ]]; then
+  echo '用法: evidence MESSAGE_ID' >&2
+  exit 2
+fi
+exec wechat-memory evidence "$1"

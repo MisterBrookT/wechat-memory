@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "namespace": "public-demo",
+  "owner": {"id": "me", "display_name": "Me"},
+  "people": [
+    {"id": "alice", "display_name": "Alice", "remark": "Agent infrastructure"},
+    {"id": "bob", "display_name": "Bob", "remark": "Product and growth"}
+  ],
+  "chats": [
+    {"id": "alice-chat", "name": "Alice", "type": "private", "peer_id": "alice"},
+    {"id": "bob-chat", "name": "Bob", "type": "private", "peer_id": "bob"},
+    {"id": "builders", "name": "AI Builders", "type": "group"}
+  ],
+  "messages": [
+    {
+      "id": "m1",
+      "chat_id": "alice-chat",
+      "sender_id": "alice",
+      "sender_name": "Alice",
+      "timestamp": "2026-07-15T10:00:00+08:00",
+      "type": "text",
+      "content": "I am building a distributed runtime for coordinating multiple AI agents."
+    },
+    {
+      "id": "m2",
+      "chat_id": "bob-chat",
+      "sender_id": "bob",
+      "sender_name": "Bob",
+      "timestamp": "2026-07-15T11:00:00+08:00",
+      "type": "text",
+      "content": "We are testing an enterprise agent product and preparing a seed round."
+    },
+    {
+      "id": "m3",
+      "chat_id": "builders",
+      "sender_id": "alice",
+      "sender_name": "Alice",
+      "timestamp": "2026-07-15T12:00:00+08:00",
+      "type": "text",
+      "content": "Reliable agent systems need evidence, context boundaries, and observable execution."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+skill: wechat-memory
+agent: codex
+cases:
+  - id: existing-session-query
+    name: 已有 Agent 的微信查询
+    prompt: 我已经在 Codex session 里。要查询微信里谁提到过 Agent 产品，应该调用哪个脚本？会不会再启动一个 Codex？请简短说明。
+    expect_activation: wechat-memory
+    assertions:
+      - type: contains
+        value: retrieve
+      - type: contains_any
+        values: ["不会", "不再", "不启动"]
+      - type: no_file_changes
+  - id: person-evidence
+    name: 人物查询和溯源
+    prompt: 我想查微信里的张三画像，再核验回答引用的第 123 条原消息。分别该用什么脚本？
+    expect_activation: wechat-memory
+    assertions:
+      - type: contains_all
+        values: ["person", "evidence"]
+      - type: no_file_changes

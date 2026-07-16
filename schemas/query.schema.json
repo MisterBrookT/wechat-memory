@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["answer", "people", "evidence_message_ids", "limitations"],
+  "properties": {
+    "answer": {"type": "string"},
+    "people": {"type": "array", "items": {"type": "string"}},
+    "evidence_message_ids": {"type": "array", "items": {"type": "integer"}},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}
+

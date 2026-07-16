@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/interesting-vibe-coding/wechat-memory/schemas/import.schema.json",
+  "title": "WeChat Memory structured import",
+  "type": "object",
+  "required": ["schema_version", "chats", "messages"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "namespace": {"type": "string"},
+    "owner": {"$ref": "#/$defs/person"},
+    "people": {"type": "array", "items": {"$ref": "#/$defs/person"}},
+    "chats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "type"],
+        "properties": {
+          "id": {"type": ["string", "number"]},
+          "name": {"type": "string"},
+          "type": {"enum": ["private", "group", "official_account", "other"]},
+          "peer_id": {"type": ["string", "number"]},
+          "last_timestamp": {"type": ["string", "number"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "chat_id", "timestamp"],
+        "properties": {
+          "id": {"type": ["string", "number"]},
+          "chat_id": {"type": ["string", "number"]},
+          "sender_id": {"type": ["string", "number"]},
+          "sender_name": {"type": "string"},
+          "timestamp": {"type": ["string", "number"]},
+          "type": {"type": "string"},
+          "content": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "$defs": {
+    "person": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": {"type": ["string", "number"]},
+        "display_name": {"type": "string"},
+        "remark": {"type": "string"},
+        "nickname": {"type": "string"},
+        "alias": {"type": "string"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

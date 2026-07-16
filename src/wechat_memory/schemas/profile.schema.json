@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["summary", "summary_evidence_message_ids", "facts"],
+  "properties": {
+    "summary": {"type": "string"},
+    "summary_evidence_message_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "integer"}
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["category", "value", "confidence", "evidence_message_id"],
+        "properties": {
+          "category": {
+            "type": "string",
+            "enum": ["identity", "company", "role", "location", "project", "expertise", "interest", "opinion", "status", "relationship", "event"]
+          },
+          "value": {"type": "string"},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "evidence_message_id": {"type": "integer"}
+        }
+      }
+    }
+  }
+}
