@@ -39,7 +39,7 @@ Profiles are not required for search. Raw messages remain the source of truth.
 ## Install
 
 ```bash
-uv tool install git+https://github.com/interesting-vibe-coding/wechat-memory.git
+uv tool install git+https://github.com/MisterBrookT/wechat-memory.git
 ```
 
 Python 3.11+ with SQLite FTS5 is required.
@@ -96,7 +96,7 @@ See [risk and data sources](docs/risk-and-data-sources.md). Disclaimers do not r
 ## Development
 
 ```bash
-git clone https://github.com/interesting-vibe-coding/wechat-memory.git
+git clone https://github.com/MisterBrookT/wechat-memory.git
 cd wechat-memory
 python3 -m venv .venv
 .venv/bin/pip install -e .

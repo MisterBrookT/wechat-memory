@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/interesting-vibe-coding/wechat-memory/schemas/import.schema.json",
+  "$id": "https://github.com/MisterBrookT/wechat-memory/schemas/import.schema.json",
   "title": "WeChat Memory structured import",
   "type": "object",
   "required": ["schema_version", "chats", "messages"],

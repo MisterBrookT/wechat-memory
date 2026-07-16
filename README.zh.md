@@ -33,7 +33,7 @@ flowchart LR
 ## 安装
 
 ```bash
-uv tool install git+https://github.com/interesting-vibe-coding/wechat-memory.git
+uv tool install git+https://github.com/MisterBrookT/wechat-memory.git
 ```
 
 需要 Python 3.11+ 和 SQLite FTS5。
@@ -90,7 +90,7 @@ wechat-memory query "谁适合聊 Agent 基础设施？"
 ## 开发
 
 ```bash
-git clone https://github.com/interesting-vibe-coding/wechat-memory.git
+git clone https://github.com/MisterBrookT/wechat-memory.git
 cd wechat-memory
 python3 -m venv .venv
 .venv/bin/pip install -e .

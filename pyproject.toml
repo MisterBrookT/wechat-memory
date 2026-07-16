@@ -19,8 +19,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/interesting-vibe-coding/wechat-memory"
-Issues = "https://github.com/interesting-vibe-coding/wechat-memory/issues"
+Homepage = "https://github.com/MisterBrookT/wechat-memory"
+Issues = "https://github.com/MisterBrookT/wechat-memory/issues"
 
 [project.scripts]
 wechat-memory = "wechat_memory.cli:main"
